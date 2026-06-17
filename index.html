@@ -10,13 +10,16 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #0b1020;
-      color: #f5f7fb;
-      line-height: 1.6;
+      background: #f4f1ea;
+      color: #111;
     }
 
     a {
@@ -24,181 +27,249 @@
       text-decoration: none;
     }
 
-    .container {
-      width: 88%;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    header {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      background: radial-gradient(circle at top left, #4f46e5, transparent 35%),
-                  radial-gradient(circle at bottom right, #06b6d4, transparent 30%),
-                  #0b1020;
-    }
-
     nav {
-      position: fixed;
-      top: 0;
       width: 100%;
-      background: rgba(11, 16, 32, 0.85);
-      backdrop-filter: blur(10px);
-      z-index: 10;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    nav .container {
+      padding: 28px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(244, 241, 234, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+      border-bottom: 1px solid #ddd5c8;
     }
 
-    nav h2 {
-      font-size: 20px;
-      color: #ffffff;
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -1px;
     }
 
-    nav ul {
+    .nav-links {
       display: flex;
-      gap: 22px;
-      list-style: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #38bdf8;
+      gap: 30px;
+      font-size: 15px;
+      font-weight: 600;
     }
 
     .hero {
-      padding-top: 80px;
+      min-height: 100vh;
+      padding: 150px 6% 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-tag {
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
-      font-size: 58px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #38bdf8;
-    }
-
-    .hero h3 {
-      font-size: 24px;
-      color: #cbd5e1;
-      margin-bottom: 20px;
-      font-weight: 400;
+      font-size: clamp(58px, 10vw, 145px);
+      line-height: 0.92;
+      letter-spacing: -6px;
+      max-width: 1050px;
+      margin-bottom: 35px;
     }
 
     .hero p {
-      max-width: 760px;
-      color: #dbeafe;
-      font-size: 17px;
-      margin-bottom: 30px;
+      max-width: 780px;
+      font-size: 22px;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 35px;
     }
 
     .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 14px;
     }
 
     .btn {
-      padding: 13px 22px;
-      border-radius: 30px;
-      font-weight: bold;
-      border: 1px solid #38bdf8;
-      transition: 0.3s;
-    }
-
-    .btn.primary {
-      background: #38bdf8;
-      color: #0b1020;
+      padding: 14px 24px;
+      border: 1.5px solid #111;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.25s;
+      background: transparent;
     }
 
     .btn:hover {
+      background: #111;
+      color: #f4f1ea;
       transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(56,189,248,0.25);
+    }
+
+    .btn-dark {
+      background: #111;
+      color: #f4f1ea;
     }
 
     section {
-      padding: 80px 0;
+      padding: 90px 6%;
+      border-top: 1px solid #d8d0c2;
     }
 
-    .section-title {
-      font-size: 34px;
-      margin-bottom: 15px;
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 40px;
+      gap: 20px;
     }
 
-    .section-subtitle {
-      color: #94a3b8;
-      margin-bottom: 35px;
-      max-width: 700px;
+    .section-header h2 {
+      font-size: clamp(42px, 6vw, 90px);
+      letter-spacing: -4px;
+      line-height: 0.95;
+    }
+
+    .section-header p {
+      max-width: 420px;
+      color: #555;
+      font-size: 17px;
+    }
+
+    .feature-card {
+      background: #111;
+      color: #f4f1ea;
+      border-radius: 34px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      min-height: 420px;
+    }
+
+    .feature-card h3 {
+      font-size: clamp(36px, 5vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .feature-card p {
+      color: #d6d3ca;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .visual-box {
+      background: linear-gradient(135deg, #e8e1d5, #b9d9ff);
+      color: #111;
+      min-height: 280px;
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -2px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
     .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 20px;
-      padding: 25px;
-      transition: 0.3s;
+      background: #fffaf1;
+      border: 1px solid #d8d0c2;
+      border-radius: 30px;
+      padding: 32px;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: 0.25s;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      border-color: #38bdf8;
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.09);
+    }
+
+    .card .icon {
+      font-size: 45px;
+      margin-bottom: 20px;
     }
 
     .card h3 {
-      color: #ffffff;
-      margin-bottom: 12px;
-      font-size: 21px;
+      font-size: 28px;
+      letter-spacing: -1px;
+      line-height: 1.05;
+      margin-bottom: 15px;
     }
 
     .card p {
-      color: #cbd5e1;
-      font-size: 15px;
-      margin-bottom: 15px;
+      color: #444;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .tags {
+      margin-top: 20px;
     }
 
     .tag {
       display: inline-block;
-      background: rgba(56,189,248,0.12);
-      color: #7dd3fc;
-      padding: 6px 10px;
-      border-radius: 20px;
+      border: 1px solid #111;
+      border-radius: 999px;
+      padding: 7px 12px;
       font-size: 12px;
-      margin: 4px 4px 0 0;
+      font-weight: 700;
+      margin: 4px;
     }
 
-    .highlight {
-      background: linear-gradient(135deg, rgba(79,70,229,0.35), rgba(6,182,212,0.18));
-      border: 1px solid rgba(125,211,252,0.4);
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 50px;
+      align-items: start;
     }
 
-    .timeline-item {
-      border-left: 3px solid #38bdf8;
-      padding-left: 20px;
-      margin-bottom: 25px;
+    .about-title {
+      font-size: clamp(42px, 6vw, 90px);
+      line-height: 0.95;
+      letter-spacing: -4px;
     }
 
-    .timeline-item h3 {
-      margin-bottom: 5px;
+    .about-text {
+      font-size: 22px;
+      line-height: 1.55;
+      color: #333;
     }
 
-    .timeline-item span {
-      color: #38bdf8;
-      font-size: 14px;
-      font-weight: bold;
+    .timeline {
+      background: #fffaf1;
+      border: 1px solid #d8d0c2;
+      border-radius: 30px;
+      padding: 35px;
+    }
+
+    .timeline h3 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .timeline span {
+      font-weight: 800;
+      color: #555;
+      display: block;
+      margin-bottom: 20px;
     }
 
     .skills {
@@ -208,28 +279,68 @@
     }
 
     .skill {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 10px 16px;
-      border-radius: 25px;
-      color: #e2e8f0;
-      font-size: 14px;
+      background: #111;
+      color: #f4f1ea;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .contact-box {
+      background: #111;
+      color: #f4f1ea;
+      border-radius: 34px;
+      padding: 55px;
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(45px, 7vw, 100px);
+      letter-spacing: -4px;
+      margin-bottom: 20px;
+    }
+
+    .contact-box p {
+      color: #d6d3ca;
+      font-size: 19px;
+      margin-bottom: 30px;
     }
 
     footer {
-      padding: 40px 0;
-      text-align: center;
-      background: #070b16;
-      color: #94a3b8;
+      padding: 35px 6%;
+      display: flex;
+      justify-content: space-between;
+      color: #555;
+      font-size: 14px;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 40px;
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
       }
 
-      nav ul {
-        display: none;
+      .feature-card,
+      .about-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
       }
     }
   </style>
@@ -238,140 +349,140 @@
 <body>
 
   <nav>
-    <div class="container">
-      <h2>Dhathri Desai</h2>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="logo">Dhathri®</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <header>
-    <div class="container hero">
-      <h1>Dhathri Desai <span>Yarramaddu</span></h1>
-      <h3>Computer Science Graduate Student | Machine Learning | Data Engineering | AI Research</h3>
+  <main>
+
+    <section class="hero">
+      <div class="hero-tag">Open to Internships · Chicago, IL</div>
+      <h1>Dhathri Desai Yarramaddu</h1>
       <p>
-        Computer Science graduate student at DePaul University with experience in machine learning,
-        computer vision, and data engineering. Co-authored a published research paper on automated
-        spinal stenosis classification using deep learning.
+        Computer Science graduate student at DePaul University focused on machine learning,
+        computer vision, data engineering, and AI research.
       </p>
 
       <div class="buttons">
-        <a class="btn primary" href="My_Resume_DhathriDesaiYarramaddu.pdf" target="_blank">View Resume</a>
+        <a class="btn btn-dark" href="My_Resume_DhathriDesaiYarramaddu.pdf" target="_blank">View Resume</a>
         <a class="btn" href="https://github.com/dhathridesai" target="_blank">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/dhathri-desai-yarramaddu-74286b280" target="_blank">LinkedIn</a>
-        <a class="btn" href="#contact">Contact Me</a>
+        <a class="btn" href="https://www.atlantis-press.com/proceedings/icarecs-25/126012881" target="_blank">Publication</a>
       </div>
-    </div>
-  </header>
+    </section>
 
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">
-        I am pursuing a Master of Science in Computer Science at DePaul University.
-        My academic and project work focuses on artificial intelligence, machine learning,
-        computer vision, data engineering, and software development.
-      </p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Education</h3>
-          <p><strong>DePaul University, Chicago</strong><br>MS in Computer Science, 2025 - 2027</p>
-          <p><strong>SRM Institute of Science and Technology</strong><br>B.Tech in Electronics and Communication Engineering, 2021 - 2025</p>
-        </div>
-
-        <div class="card">
-          <h3>Focus Areas</h3>
-          <p>Machine Learning, Computer Vision, Data Engineering, Artificial Intelligence, Software Development, and Data Analytics.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="research">
-    <div class="container">
-      <h2 class="section-title">Featured Research</h2>
-      <p class="section-subtitle">
-        Published research in AI-based medical image analysis.
-      </p>
-
-      <div class="card highlight">
-        <h3>Automated Detection and Classification of Spinal Stenosis</h3>
-        <p>
-          Co-authored a conference paper on AI-based spinal stenosis detection and classification
-          using deep learning and medical imaging. Published in the Proceedings of ICARECS 2025
-          by Atlantis Press.
+    <section id="about">
+      <div class="about-wrap">
+        <h2 class="about-title">About Me</h2>
+        <p class="about-text">
+          I am pursuing a Master of Science in Computer Science at DePaul University.
+          My work includes AI-based medical imaging research, computer vision for aircraft
+          maintenance, and data engineering workflows using Spark, Kafka, Databricks, MongoDB,
+          Hive, and Azure Data Factory.
         </p>
-        <p><strong>DOI:</strong> 10.2991/978-94-6463-754-0_47</p>
-
-        <div class="buttons">
-          <a class="btn primary" href="https://www.atlantis-press.com/proceedings/icarecs-25/126012881" target="_blank">
-            Read Publication
-          </a>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <p class="section-subtitle">
-        Selected academic and technical projects in AI, computer vision, and data analytics.
-      </p>
+    <section id="research">
+      <div class="section-header">
+        <h2>Featured Research</h2>
+        <p>Published work in deep learning for medical image analysis.</p>
+      </div>
 
-      <div class="grid">
-        <div class="card">
+      <div class="feature-card">
+        <div>
           <h3>Automated Detection and Classification of Spinal Stenosis</h3>
           <p>
-            Developed a ResNet50V2-based deep learning model for lumbar spinal stenosis
-            classification from MRI images. Used Grad-CAM for interpretability and evaluated
-            performance using accuracy, precision, recall, and confusion matrix.
+            Co-authored a conference paper on AI-based spinal stenosis detection and classification
+            using deep learning and MRI medical imaging.
           </p>
-          <span class="tag">Python</span>
-          <span class="tag">ResNet50V2</span>
-          <span class="tag">Grad-CAM</span>
-          <span class="tag">Deep Learning</span>
+          <p>
+            Published in ICARECS 2025 proceedings by Atlantis Press.
+            DOI: 10.2991/978-94-6463-754-0_47
+          </p>
+          <div class="buttons">
+            <a class="btn" href="https://www.atlantis-press.com/proceedings/icarecs-25/126012881" target="_blank">Read Publication</a>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>AI-Driven Aircraft Maintenance System</h3>
-          <p>
-            Built a YOLOv5-based computer vision model to detect cracks in aircraft inspection
-            images. Developed predictive models for aircraft battery health and created a
-            visualization dashboard for maintenance insights.
-          </p>
-          <span class="tag">Python</span>
-          <span class="tag">YOLOv5</span>
-          <span class="tag">Computer Vision</span>
-          <span class="tag">Predictive Analytics</span>
-        </div>
-
-        <div class="card">
-          <h3>Superstore Sales Analysis and Visualization</h3>
-          <p>
-            Performed exploratory data analysis on retail sales data to identify revenue trends,
-            regional performance, profitability, and business insights using dashboards.
-          </p>
-          <span class="tag">Tableau</span>
-          <span class="tag">EDA</span>
-          <span class="tag">Data Visualization</span>
-          <span class="tag">Analytics</span>
+        <div class="visual-box">
+          AI + Medical Imaging
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Experience</h2>
+    <section id="work">
+      <div class="section-header">
+        <h2>Selected Work</h2>
+        <p>Projects across machine learning, computer vision, and data analytics.</p>
+      </div>
 
-      <div class="timeline-item">
+      <div class="grid">
+
+        <div class="card">
+          <div>
+            <div class="icon">🧠</div>
+            <h3>Spinal Stenosis Classification</h3>
+            <p>
+              Built a ResNet50V2-based deep learning model for lumbar spinal stenosis
+              classification from MRI images with Grad-CAM interpretability.
+            </p>
+          </div>
+          <div class="tags">
+            <span class="tag">ResNet50V2</span>
+            <span class="tag">Grad-CAM</span>
+            <span class="tag">Deep Learning</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="icon">✈️</div>
+            <h3>AI-Driven Aircraft Maintenance</h3>
+            <p>
+              Developed a YOLOv5-based computer vision model for aircraft crack detection
+              and predictive maintenance analysis.
+            </p>
+          </div>
+          <div class="tags">
+            <span class="tag">YOLOv5</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Predictive Analytics</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="icon">📊</div>
+            <h3>Superstore Sales Analysis</h3>
+            <p>
+              Performed exploratory data analysis and created dashboards to identify revenue,
+              regional performance, and profitability trends.
+            </p>
+          </div>
+          <div class="tags">
+            <span class="tag">Tableau</span>
+            <span class="tag">EDA</span>
+            <span class="tag">Visualization</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-header">
+        <h2>Experience</h2>
+        <p>Data engineering internship experience with large-scale data workflows.</p>
+      </div>
+
+      <div class="timeline">
         <h3>Data Engineering Intern — India</h3>
         <span>June 2024 - November 2024</span>
         <p>
@@ -380,12 +491,13 @@
           and Databricks for batch and streaming workflows.
         </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <div class="container">
-      <h2 class="section-title">Technical Skills</h2>
+    <section id="skills">
+      <div class="section-header">
+        <h2>Skills</h2>
+        <p>Technologies and tools used across projects, research, and data workflows.</p>
+      </div>
 
       <div class="skills">
         <span class="skill">Python</span>
@@ -409,37 +521,29 @@
         <span class="skill">Git</span>
         <span class="skill">Linux</span>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <p class="section-subtitle">
-        I am open to internship opportunities in software engineering, data engineering, machine learning, and AI.
-      </p>
+    <section id="contact">
+      <div class="contact-box">
+        <h2>Let’s Connect</h2>
+        <p>
+          Open to internship opportunities in software engineering, data engineering,
+          machine learning, and AI.
+        </p>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Email</h3>
-          <p><a href="mailto:dhathridesai1@gmail.com">dhathridesai1@gmail.com</a></p>
-        </div>
-
-        <div class="card">
-          <h3>GitHub</h3>
-          <p><a href="https://github.com/dhathridesai" target="_blank">github.com/dhathridesai</a></p>
-        </div>
-
-        <div class="card">
-          <h3>LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/in/dhathri-desai-yarramaddu-74286b280" target="_blank">View LinkedIn Profile</a></p>
+        <div class="buttons" style="justify-content:center;">
+          <a class="btn" href="mailto:dhathridesai1@gmail.com">Email Me</a>
+          <a class="btn" href="https://github.com/dhathridesai" target="_blank">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/dhathri-desai-yarramaddu-74286b280" target="_blank">LinkedIn</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
 
   <footer>
-    <p>© 2026 Dhathri Desai Yarramaddu. All rights reserved.</p>
+    <p>© 2026 Dhathri Desai Yarramaddu</p>
+    <p>Built with GitHub Pages</p>
   </footer>
 
 </body>
