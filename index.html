@@ -6,43 +6,35 @@
   <title>Dhathri Desai Yarramaddu | Portfolio</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Georgia, 'Times New Roman', serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: #12070f;
       color: #f8eefa;
+      font-family: Arial, sans-serif;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     nav {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
-      padding: 24px 7%;
+      padding: 22px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: rgba(18, 7, 15, 0.92);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 64, 160, 0.25);
+      border-bottom: 1px solid rgba(255, 79, 163, 0.25);
     }
 
     .logo {
-      font-size: 24px;
+      font-family: Georgia, serif;
+      font-size: 26px;
       font-weight: bold;
       color: #ff4fa3;
     }
@@ -50,14 +42,11 @@
     .nav-links {
       display: flex;
       gap: 28px;
-      font-family: Arial, sans-serif;
       font-size: 14px;
       font-weight: 700;
     }
 
-    .nav-links a:hover {
-      color: #ff4fa3;
-    }
+    .nav-links a:hover { color: #ff4fa3; }
 
     .hero {
       min-height: 100vh;
@@ -73,9 +62,8 @@
     }
 
     .hero-subtitle {
-      font-family: Arial, sans-serif;
       color: #ff9ccc;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 1.5px;
       text-transform: uppercase;
       margin-bottom: 18px;
@@ -83,22 +71,19 @@
     }
 
     .hero h1 {
-      font-size: clamp(34px, 4vw, 58px);
-      line-height: 1.15;
-      margin-bottom: 18px;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 5vw, 68px);
+      line-height: 1.1;
+      margin-bottom: 20px;
       color: #fff4fb;
     }
 
-    .hero h1 span {
-      color: #ff4fa3;
-      font-size: clamp(38px, 4.5vw, 64px);
-    }
+    .hero h1 span { color: #ff4fa3; }
 
     .hero p {
-      font-family: Arial, sans-serif;
       font-size: 18px;
       color: #d8b9cc;
-      max-width: 680px;
+      max-width: 700px;
       line-height: 1.7;
       margin-bottom: 28px;
     }
@@ -110,14 +95,12 @@
     }
 
     .btn {
-      font-family: Arial, sans-serif;
       padding: 12px 22px;
       border-radius: 999px;
       border: 1px solid #ff4fa3;
       color: #ffe6f4;
       font-weight: 700;
       transition: 0.3s;
-      box-shadow: 0 0 18px rgba(255, 79, 163, 0.14);
     }
 
     .btn:hover {
@@ -138,7 +121,6 @@
       border-radius: 32px;
       background: linear-gradient(145deg, #ff86be, #4b203a);
       box-shadow: 0 25px 70px rgba(255, 79, 163, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .photo-card img {
@@ -148,7 +130,6 @@
       object-position: center top;
       display: block;
       border-radius: 22px;
-      border: 2px solid rgba(255, 255, 255, 0.18);
     }
 
     section {
@@ -158,6 +139,7 @@
 
     .section-title {
       text-align: center;
+      font-family: Georgia, serif;
       font-size: clamp(34px, 5vw, 58px);
       margin-bottom: 14px;
       color: #ffe6f4;
@@ -172,36 +154,43 @@
     }
 
     .about-grid,
-    .project-grid {
+    .project-grid,
+    .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .soft-card {
+    .soft-card,
+    .project-card,
+    .contact-card {
       background: #20101b;
       border: 1px solid rgba(255, 79, 163, 0.28);
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 28px;
-      text-align: center;
       box-shadow: 0 15px 35px rgba(0,0,0,0.22);
       transition: 0.3s;
     }
 
-    .soft-card:hover {
+    .soft-card:hover,
+    .project-card:hover,
+    .contact-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 45px rgba(255, 79, 163, 0.16);
       border-color: #ff4fa3;
+      box-shadow: 0 18px 45px rgba(255, 79, 163, 0.16);
     }
 
-    .soft-card h3 {
+    .soft-card h3,
+    .project-card h3,
+    .contact-card h3 {
       color: #ff9ccc;
       margin-bottom: 12px;
-      font-size: 20px;
+      font-size: 21px;
     }
 
-    .soft-card p {
-      font-family: Arial, sans-serif;
+    .soft-card p,
+    .project-card p,
+    .contact-card p {
       color: #d8b9cc;
       font-size: 15px;
       line-height: 1.7;
@@ -209,12 +198,11 @@
 
     .skills-wrap {
       text-align: center;
-      max-width: 900px;
+      max-width: 950px;
       margin: auto;
     }
 
     .skills-wrap p {
-      font-family: Arial, sans-serif;
       color: #d8b9cc;
       margin-bottom: 28px;
       font-size: 16px;
@@ -228,7 +216,6 @@
     }
 
     .skill {
-      font-family: Arial, sans-serif;
       background: #281420;
       border: 1px solid rgba(255, 79, 163, 0.35);
       color: #ffc5e2;
@@ -238,41 +225,16 @@
       font-weight: 700;
     }
 
-    .project-section {
-      background: #2b1725;
-    }
+    .project-section { background: #2b1725; }
 
     .project-card {
-      background: #1b0d17;
-      border: 1px solid rgba(255, 79, 163, 0.32);
-      border-radius: 18px;
-      padding: 26px;
-      min-height: 310px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.28);
-      transition: 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-7px);
-      border-color: #ff4fa3;
-    }
-
-    .project-card h3 {
-      color: #ff9ccc;
-      margin-bottom: 14px;
-      font-size: 22px;
-    }
-
-    .project-card p {
-      font-family: Arial, sans-serif;
-      color: #d8b9cc;
-      line-height: 1.7;
-      font-size: 15px;
-      margin-bottom: 16px;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .tag {
-      font-family: Arial, sans-serif;
       display: inline-block;
       border: 1px solid #ff4fa3;
       color: #ffc5e2;
@@ -280,6 +242,7 @@
       padding: 6px 10px;
       font-size: 12px;
       margin: 4px;
+      font-weight: 700;
     }
 
     .research-card {
@@ -292,13 +255,13 @@
     }
 
     .research-card h3 {
+      font-family: Georgia, serif;
       font-size: clamp(28px, 4vw, 48px);
       line-height: 1.1;
       margin-bottom: 20px;
     }
 
     .research-card p {
-      font-family: Arial, sans-serif;
       color: #ffe6f4;
       line-height: 1.7;
       margin-bottom: 15px;
@@ -312,40 +275,29 @@
     }
 
     .experience-box {
-      max-width: 760px;
+      max-width: 800px;
       margin: auto;
-      font-family: Arial, sans-serif;
       line-height: 1.8;
     }
 
     .experience-box h3 {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 28px;
+      font-family: Georgia, serif;
+      font-size: 30px;
       margin-bottom: 10px;
     }
 
     .experience-box span {
-      color: #ffe6f4;
-      font-weight: 700;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 16px;
     }
 
-    .contact {
-      text-align: center;
-      background: #12070f;
-    }
-
-    .contact p {
-      font-family: Arial, sans-serif;
-      color: #d8b9cc;
-      margin-bottom: 28px;
-      font-size: 17px;
-    }
+    .contact { text-align: center; }
 
     footer {
       text-align: center;
       padding: 26px 7%;
       color: #b98aa5;
-      font-family: Arial, sans-serif;
       font-size: 14px;
       border-top: 1px solid rgba(255, 79, 163, 0.18);
     }
@@ -356,22 +308,17 @@
         text-align: center;
       }
 
-      .buttons {
-        justify-content: center;
-      }
+      .buttons { justify-content: center; }
 
       .about-grid,
-      .project-grid {
+      .project-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .nav-links {
-        display: none;
-      }
+      .nav-links { display: none; }
 
-      .photo-card img {
-        height: 340px;
-      }
+      .photo-card img { height: 340px; }
     }
   </style>
 </head>
@@ -395,9 +342,9 @@
       <div class="hero-subtitle">Open to Internships · Chicago, IL</div>
 
       <h1>
-Dhathri Desai<br>
-<span>Yarramaddu</span>
-</h1>
+        Dhathri Desai<br>
+        <span>Yarramaddu</span>
+      </h1>
 
       <p>
         Master's in Computer Science student at DePaul University with interests in
@@ -482,36 +429,53 @@ Dhathri Desai<br>
 
     <div class="project-grid">
       <div class="project-card">
-        <h3>🧠 Spinal Stenosis Classification</h3>
-        <p>
-          Built a ResNet50V2-based deep learning model for lumbar spinal stenosis classification from MRI images.
-          Used Grad-CAM for interpretability and evaluated model performance using accuracy, precision, recall, and confusion matrix.
-        </p>
-        <span class="tag">ResNet50V2</span>
-        <span class="tag">Grad-CAM</span>
-        <span class="tag">Deep Learning</span>
+        <div>
+          <h3>🧠 Spinal Stenosis Classification</h3>
+          <p>
+            Developed a ResNet50V2-based deep learning model for lumbar spinal stenosis classification from MRI images.
+            Used Grad-CAM to highlight important MRI regions and evaluated the model using accuracy, precision, recall,
+            and confusion matrix.
+          </p>
+        </div>
+        <div>
+          <span class="tag">Python</span>
+          <span class="tag">ResNet50V2</span>
+          <span class="tag">Grad-CAM</span>
+          <span class="tag">Deep Learning</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <h3>✈️ AI-Driven Aircraft Maintenance</h3>
-        <p>
-          Developed a YOLOv5-based computer vision model for aircraft crack detection and predictive maintenance analysis.
-          Created a visualization dashboard for maintenance-related insights.
-        </p>
-        <span class="tag">YOLOv5</span>
-        <span class="tag">Computer Vision</span>
-        <span class="tag">Predictive Analytics</span>
+        <div>
+          <h3>✈️ Integrated AI-Driven Aircraft Maintenance</h3>
+          <p>
+            Built an AI-based aircraft maintenance system combining YOLOv5 crack detection, Random Forest battery life
+            estimation, and PyTorch JetRUL prediction for jet engine remaining useful life.
+            Achieved 92% crack detection precision, 0.024 battery prediction MSE, and 19.5 cycle RUL RMSE.
+          </p>
+        </div>
+        <div>
+          <span class="tag">YOLOv5</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">Random Forest</span>
+          <span class="tag">Predictive Maintenance</span>
+        </div>
       </div>
 
       <div class="project-card">
-        <h3>📊 Superstore Sales Analysis</h3>
-        <p>
-          Performed exploratory data analysis and created dashboards to identify revenue trends,
-          regional sales performance, and profitability insights.
-        </p>
-        <span class="tag">Tableau</span>
-        <span class="tag">EDA</span>
-        <span class="tag">Visualization</span>
+        <div>
+          <h3>📊 Superstore Sales Analysis</h3>
+          <p>
+            Performed exploratory data analysis on retail sales data to identify revenue trends, regional sales performance,
+            profitability patterns, and business insights using dashboards and visualization techniques.
+          </p>
+        </div>
+        <div>
+          <span class="tag">Tableau</span>
+          <span class="tag">EDA</span>
+          <span class="tag">Visualization</span>
+          <span class="tag">Analytics</span>
+        </div>
       </div>
     </div>
   </section>
@@ -523,7 +487,8 @@ Dhathri Desai<br>
     <div class="research-card">
       <h3>Automated Detection and Classification of Spinal Stenosis</h3>
       <p>
-        Co-authored a conference paper on AI-based spinal stenosis detection and classification using deep learning and MRI medical imaging.
+        Co-authored a conference paper on AI-based spinal stenosis detection and classification using deep learning
+        and MRI medical imaging.
       </p>
       <p>
         Published in ICARECS 2025 proceedings by Atlantis Press.
@@ -531,7 +496,9 @@ Dhathri Desai<br>
       <p><strong>DOI:</strong> 10.2991/978-94-6463-754-0_47</p>
 
       <div class="buttons">
-        <a class="btn btn-main" href="https://www.atlantis-press.com/proceedings/icarecs-25/126012881" target="_blank">Read Publication</a>
+        <a class="btn btn-main" href="https://www.atlantis-press.com/proceedings/icarecs-25/126012881" target="_blank">
+          Read Publication
+        </a>
       </div>
     </div>
   </section>
@@ -544,8 +511,8 @@ Dhathri Desai<br>
       <h3>Data Engineering Intern</h3>
       <span>June 2024 – November 2024</span>
       <p>
-        Developed and optimized ETL pipelines using Apache NiFi and Apache Spark for large-scale financial data ingestion and processing.
-        Worked with MongoDB, Hive, Kafka, Azure Data Factory, and Databricks for batch and streaming workflows.
+        Developed and optimized ETL pipelines using Apache NiFi and Apache Spark for large-scale financial data ingestion
+        and processing. Worked with MongoDB, Hive, Kafka, Azure Data Factory, and Databricks for batch and streaming workflows.
       </p>
     </div>
   </section>
@@ -554,12 +521,21 @@ Dhathri Desai<br>
     <h2 class="section-title">Let’s Connect</h2>
     <div class="underline"></div>
 
-    <p>Open to internship opportunities in software engineering, data engineering, machine learning, and AI.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p><a href="mailto:dhathridesai1@gmail.com">dhathridesai1@gmail.com</a></p>
+      </div>
 
-    <div class="buttons" style="justify-content:center;">
-      <a class="btn btn-main" href="mailto:dhathridesai1@gmail.com">Email Me</a>
-      <a class="btn" href="https://github.com/dhathridesai" target="_blank">GitHub</a>
-      <a class="btn" href="https://www.linkedin.com/in/dhathri-desai-yarramaddu-74286b280" target="_blank">LinkedIn</a>
+      <div class="contact-card">
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/dhathridesai" target="_blank">github.com/dhathridesai</a></p>
+      </div>
+
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/dhathri-desai-yarramaddu-74286b280" target="_blank">View LinkedIn Profile</a></p>
+      </div>
     </div>
   </section>
 
