@@ -1,56 +1,446 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Dhathri Desai Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhathri Desai Yarramaddu | Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #0b1020;
+      color: #f5f7fb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: radial-gradient(circle at top left, #4f46e5, transparent 35%),
+                  radial-gradient(circle at bottom right, #06b6d4, transparent 30%),
+                  #0b1020;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(11, 16, 32, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    nav h2 {
+      font-size: 20px;
+      color: #ffffff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      padding-top: 80px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #38bdf8;
+    }
+
+    .hero h3 {
+      font-size: 24px;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      font-weight: 400;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #dbeafe;
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 13px 22px;
+      border-radius: 30px;
+      font-weight: bold;
+      border: 1px solid #38bdf8;
+      transition: 0.3s;
+    }
+
+    .btn.primary {
+      background: #38bdf8;
+      color: #0b1020;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(56,189,248,0.25);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      color: #94a3b8;
+      margin-bottom: 35px;
+      max-width: 700px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 25px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #38bdf8;
+    }
+
+    .card h3 {
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(56,189,248,0.12);
+      color: #7dd3fc;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 4px 4px 0 0;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, rgba(79,70,229,0.35), rgba(6,182,212,0.18));
+      border: 1px solid rgba(125,211,252,0.4);
+    }
+
+    .timeline-item {
+      border-left: 3px solid #38bdf8;
+      padding-left: 20px;
+      margin-bottom: 25px;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 5px;
+    }
+
+    .timeline-item span {
+      color: #38bdf8;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px 16px;
+      border-radius: 25px;
+      color: #e2e8f0;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      background: #070b16;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <h1>Dhathri Desai Yarramaddu</h1>
+  <nav>
+    <div class="container">
+      <h2>Dhathri Desai</h2>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h2>Computer Science Graduate Student</h2>
+  <header>
+    <div class="container hero">
+      <h1>Dhathri Desai <span>Yarramaddu</span></h1>
+      <h3>Computer Science Graduate Student | Machine Learning | Data Engineering | AI Research</h3>
+      <p>
+        Computer Science graduate student at DePaul University with experience in machine learning,
+        computer vision, and data engineering. Co-authored a published research paper on automated
+        spinal stenosis classification using deep learning.
+      </p>
 
-    <p>
-        DePaul University | Machine Learning | Data Engineering | AI Research
-    </p>
+      <div class="buttons">
+        <a class="btn primary" href="My_Resume_DhathriDesaiYarramaddu.pdf" target="_blank">View Resume</a>
+        <a class="btn" href="https://github.com/dhathridesai" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/dhathri-desai-yarramaddu-74286b280" target="_blank">LinkedIn</a>
+        <a class="btn" href="#contact">Contact Me</a>
+      </div>
+    </div>
+  </header>
 
-    <hr>
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">
+        I am pursuing a Master of Science in Computer Science at DePaul University.
+        My academic and project work focuses on artificial intelligence, machine learning,
+        computer vision, data engineering, and software development.
+      </p>
 
-    <h2>About Me</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Education</h3>
+          <p><strong>DePaul University, Chicago</strong><br>MS in Computer Science, 2025 - 2027</p>
+          <p><strong>SRM Institute of Science and Technology</strong><br>B.Tech in Electronics and Communication Engineering, 2021 - 2025</p>
+        </div>
 
-    <p>
-        I am currently pursuing a Master's in Computer Science at DePaul University.
-        My interests include Machine Learning, Artificial Intelligence, Data Engineering,
-        and Software Development.
-    </p>
+        <div class="card">
+          <h3>Focus Areas</h3>
+          <p>Machine Learning, Computer Vision, Data Engineering, Artificial Intelligence, Software Development, and Data Analytics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Projects</h2>
+  <section id="research">
+    <div class="container">
+      <h2 class="section-title">Featured Research</h2>
+      <p class="section-subtitle">
+        Published research in AI-based medical image analysis.
+      </p>
 
-    <h3>Automated Detection and Classification of Spinal Stenosis</h3>
+      <div class="card highlight">
+        <h3>Automated Detection and Classification of Spinal Stenosis</h3>
+        <p>
+          Co-authored a conference paper on AI-based spinal stenosis detection and classification
+          using deep learning and medical imaging. Published in the Proceedings of ICARECS 2025
+          by Atlantis Press.
+        </p>
+        <p><strong>DOI:</strong> 10.2991/978-94-6463-754-0_47</p>
 
-    <p>
-        Developed a ResNet50V2-based deep learning model for lumbar spinal stenosis
-        classification from MRI images and published research in ICARECS 2025.
-    </p>
+        <div class="buttons">
+          <a class="btn primary" href="https://www.atlantis-press.com/proceedings/icarecs-25/126012881" target="_blank">
+            Read Publication
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h3>AI-Driven Aircraft Maintenance System</h3>
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-subtitle">
+        Selected academic and technical projects in AI, computer vision, and data analytics.
+      </p>
 
-    <p>
-        Developed a YOLOv5-based computer vision model for aircraft crack detection
-        and predictive maintenance analysis.
-    </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Automated Detection and Classification of Spinal Stenosis</h3>
+          <p>
+            Developed a ResNet50V2-based deep learning model for lumbar spinal stenosis
+            classification from MRI images. Used Grad-CAM for interpretability and evaluated
+            performance using accuracy, precision, recall, and confusion matrix.
+          </p>
+          <span class="tag">Python</span>
+          <span class="tag">ResNet50V2</span>
+          <span class="tag">Grad-CAM</span>
+          <span class="tag">Deep Learning</span>
+        </div>
 
-    <h3>Superstore Sales Analysis and Visualization</h3>
+        <div class="card">
+          <h3>AI-Driven Aircraft Maintenance System</h3>
+          <p>
+            Built a YOLOv5-based computer vision model to detect cracks in aircraft inspection
+            images. Developed predictive models for aircraft battery health and created a
+            visualization dashboard for maintenance insights.
+          </p>
+          <span class="tag">Python</span>
+          <span class="tag">YOLOv5</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">Predictive Analytics</span>
+        </div>
 
-    <p>
-        Performed exploratory data analysis and built dashboards for business insights.
-    </p>
+        <div class="card">
+          <h3>Superstore Sales Analysis and Visualization</h3>
+          <p>
+            Performed exploratory data analysis on retail sales data to identify revenue trends,
+            regional performance, profitability, and business insights using dashboards.
+          </p>
+          <span class="tag">Tableau</span>
+          <span class="tag">EDA</span>
+          <span class="tag">Data Visualization</span>
+          <span class="tag">Analytics</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Contact</h2>
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
 
-    <p>Email: dhathridesai1@gmail.com</p>
+      <div class="timeline-item">
+        <h3>Data Engineering Intern — India</h3>
+        <span>June 2024 - November 2024</span>
+        <p>
+          Developed and optimized ETL pipelines using Apache NiFi and Apache Spark for large-scale
+          financial data ingestion and processing. Worked with MongoDB, Hive, Kafka, Azure Data Factory,
+          and Databricks for batch and streaming workflows.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills">
+        <span class="skill">Python</span>
+        <span class="skill">Java</span>
+        <span class="skill">C</span>
+        <span class="skill">SQL</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">Apache Spark</span>
+        <span class="skill">Apache NiFi</span>
+        <span class="skill">Kafka</span>
+        <span class="skill">MongoDB</span>
+        <span class="skill">Hive</span>
+        <span class="skill">Databricks</span>
+        <span class="skill">Azure Data Factory</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">Deep Learning</span>
+        <span class="skill">YOLOv5</span>
+        <span class="skill">ResNet50V2</span>
+        <span class="skill">Grad-CAM</span>
+        <span class="skill">Tableau</span>
+        <span class="skill">Git</span>
+        <span class="skill">Linux</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        I am open to internship opportunities in software engineering, data engineering, machine learning, and AI.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Email</h3>
+          <p><a href="mailto:dhathridesai1@gmail.com">dhathridesai1@gmail.com</a></p>
+        </div>
+
+        <div class="card">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/dhathridesai" target="_blank">github.com/dhathridesai</a></p>
+        </div>
+
+        <div class="card">
+          <h3>LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/dhathri-desai-yarramaddu-74286b280" target="_blank">View LinkedIn Profile</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Dhathri Desai Yarramaddu. All rights reserved.</p>
+  </footer>
 
 </body>
-
 </html>
