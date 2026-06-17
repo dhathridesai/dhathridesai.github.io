@@ -36,7 +36,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(18, 7, 15, 0.9);
+      background: rgba(18, 7, 15, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 64, 160, 0.25);
     }
@@ -72,15 +72,26 @@
         #12070f;
     }
 
+    .hero-subtitle {
+      font-family: Arial, sans-serif;
+      color: #ff9ccc;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      font-size: 13px;
+    }
+
     .hero h1 {
-      font-size: clamp(42px, 6vw, 82px);
-      line-height: 1;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 1.15;
       margin-bottom: 18px;
       color: #fff4fb;
     }
 
     .hero h1 span {
       color: #ff4fa3;
+      font-size: clamp(38px, 4.5vw, 64px);
     }
 
     .hero p {
@@ -90,16 +101,6 @@
       max-width: 680px;
       line-height: 1.7;
       margin-bottom: 28px;
-    }
-
-    .hero-subtitle {
-      font-family: Arial, sans-serif;
-      color: #ff9ccc;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-      font-size: 13px;
     }
 
     .buttons {
@@ -170,7 +171,8 @@
       border-radius: 20px;
     }
 
-    .about-grid, .project-grid {
+    .about-grid,
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
@@ -358,7 +360,8 @@
         justify-content: center;
       }
 
-      .about-grid, .project-grid {
+      .about-grid,
+      .project-grid {
         grid-template-columns: 1fr;
       }
 
@@ -390,10 +393,15 @@
   <section class="hero">
     <div>
       <div class="hero-subtitle">Open to Internships · Chicago, IL</div>
-      <h1>Hi there, I’m <span>Dhathri Desai Yarramaddu</span></h1>
+
+      <h1>
+        Hi there, I'm<br>
+        <span>Dhathri Desai Yarramaddu</span>
+      </h1>
+
       <p>
-        Computer Science graduate student at DePaul University focused on machine learning,
-        computer vision, data engineering, and AI research.
+        Master's in Computer Science student at DePaul University with interests in
+        Machine Learning, Data Engineering, Computer Vision, and AI Research.
       </p>
 
       <div class="buttons">
